@@ -1,13 +1,14 @@
 .habit-container {
-  background-color: #fbb204eb;
-  border: solid 2px black;
   height: 200px;
-  width: 100%;
   margin-top: 20px;
+  width: 100%;
+  background: white;
+  border: none;
+  box-shadow: 2px 4px 7px 0px #80808036;
 }
 
 .week {
-  /* border-bottom: solid 2px black; */
+  margin-top: 10px;
   height: 20%;
   width: 100%;
   display: flex;
@@ -20,15 +21,17 @@
   flex-direction: row;
 }
 .status {
-  height: 70%;
+  height: 60%;
   width: 100%;
   display: flex;
   flex-direction: row;
 }
 
 .title {
+  text-transform: capitalize;
   height: 100%;
   width: 10%;
+  justify-content: center;
   display: flex;
   margin-left: 20px;
   align-items: center;
@@ -37,7 +40,7 @@
 .col-container {
   list-style-type: none;
   height: 100%;
-  width: 90%;
+  width: 80%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -45,7 +48,7 @@
 
 .col-container li {
   position: relative;
-  border: solid 2px black;
+
   height: 100%;
   padding: 0px;
   margin: 0px;
@@ -59,10 +62,34 @@
   width: 30%;
 }
 
+li:nth-child(7) {
+  background-color: rgba(255, 255, 0, 0.477);
+}
+
 .toggle-btn {
   height: 100%;
   width: 100%;
   position: absolute;
   background-color: transparent;
   border: none;
+}
+@media screen and (max-width: 900px) and (min-width: 300px) {
+  .tasks-container {
+    align-items: flex-start;
+  }
+  .title {
+    font-size: 15px;
+  }
+  .habit-container {
+    overflow-x: scroll;
+    height: 200px;
+    margin-top: 20px;
+    width: 1200px;
+    background: white;
+    border: none;
+    box-shadow: 2px 4px 7px 0px #80808036;
+  }
+  .habit-container::-webkit-scrollbar {
+    visibility: hidden;
+  }
 }

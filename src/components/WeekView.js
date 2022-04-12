@@ -22,17 +22,16 @@ function WeekView(props) {
 
   const d = new Date();
   let day = d.getDay();
+  let i = day + 1;
   let date = d.getDate();
-  let res = date - day;
+  let res = date - 6;
   let res_arr = [];
-  let i = 0;
-  while (i < 7) {
+  let m = 0;
+  while (m < 7) {
     res_arr.push(res);
     res++;
-    i++;
+    m++;
   }
-
-  console.log(res_arr);
 
   let week = [
     "Sunday",
@@ -46,58 +45,82 @@ function WeekView(props) {
 
   return (
     <>
-      {props.list.map((elem1, j) => {
-        j++;
-        return (
-          <div className="habit-container">
-            <div className="week">
-              <div className="title"></div>
-              <ul className="col-container">
-                {week.map((elem, i = 0) => {
-                  ++i;
-                  return <li id={i}>{elem}</li>;
-                })}
-              </ul>
-            </div>
+      {props.list.length != 0 ? (
+        props.list.map((elem1, j) => {
+          j++;
+          return (
+            <div className="habit-container">
+              {/*display days of the week */}
 
-            <div className="date">
-              <div className="title"></div>
-              <ul className="col-container">
-                {res_arr.map((elem) => {
-                  return <li>{elem}</li>;
-                })}
-              </ul>
+              <div className="week">
+                <h2 className="title" style={{ marginTop: "10px" }}>
+                  Habits/Day
+                </h2>
+                <ul className="col-container">
+                  {week.map((elem) => {
+                    if (i == 7) {
+                      i = 0;
+                    }
+                    i++;
+                    return <li key={i}>{week[i - 1]}</li>;
+                  })}
+                </ul>
+              </div>
+
+              {/*display days of the week */}
+              <div className="date">
+                <div className="title"></div>
+                <ul className="col-container">
+                  {res_arr.map((elem) => {
+                    return <li key={`date-${elem}`}>{elem}</li>;
+                  })}
+                </ul>
+              </div>
+              <div className="status">
+                <h1 className="title">{elem1.title}</h1>
+                <ul className="col-container">
+                  {elem1.status.map((a, k = 0) => {
+                    k++;
+                    return (
+                      <li key={k} className="toggle-img">
+                        <>
+                          {a === 0 ? (
+                            <img src={pending} />
+                          ) : a === 1 ? (
+                            <img src={right} />
+                          ) : (
+                            <img src={wrong} />
+                          )}
+                          <button
+                            className="toggle-btn"
+                            onClick={() => {
+                              toggleStatus(j - 1, k - 1, a);
+                            }}
+                          ></button>
+                        </>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </div>
-            <div className="status">
-              <div className="title">{elem1.title}</div>
-              <ul className="col-container">
-                {elem1.status.map((a, k = 0) => {
-                  k++;
-                  return (
-                    <li className="toggle-img">
-                      <>
-                        {a === 0 ? (
-                          <img src={pending} />
-                        ) : a === 1 ? (
-                          <img src={right} />
-                        ) : (
-                          <img src={wrong} />
-                        )}
-                        <button
-                          className="toggle-btn"
-                          onClick={() => {
-                            toggleStatus(j - 1, k - 1, a);
-                          }}
-                        ></button>
-                      </>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-        );
-      })}
+          );
+        })
+      ) : (
+        <h1
+          className="emptyMessage"
+          style={{
+            fontSize: "2rem",
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          No Habit Found !! Please add Some 🧵
+        </h1>
+      )}
     </>
   );
 }

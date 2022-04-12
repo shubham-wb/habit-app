@@ -1,25 +1,29 @@
-import "./assets/css/Main.css";
 import React from "react";
-import Navbar from "./components/Navbar";
-import Aside from "./components/Aside";
-import Home from "./components/Home";
-
-import "./assets/css/Main.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./assets/css/App.css";
-import WeekView from "./components/WeekView";
+import Navbar from "./Navbar";
+import Aside from "./Aside";
+import Home from "./Home";
+import Profile from "./profile";
+import Notifications from "./notifications";
+import WeekView from "./WeekView";
+
+import "../assets/css/Main.css";
+import "../assets/css/App.css";
 
 function App(props) {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Aside />
+
         <div className="main">
-          <Aside />
+          <Navbar />
           <section className="tasks-container">
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/week-view" element={<WeekView />}></Route>
+              <Route path="/profile" element={<Profile />}></Route>
+              <Route path="/notifications" element={<Notifications />}></Route>
             </Routes>
           </section>
         </div>

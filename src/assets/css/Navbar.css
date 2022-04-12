@@ -2,54 +2,46 @@
 nav {
   display: flex;
   flex-direction: row;
-  border-bottom: solid 1px black;
-  box-shadow: 3px 4px 17px 0px #0000008c;
   height: 10%;
   width: 100%;
-  background-color: #037171;
-  z-index: 10;
   align-items: center;
 }
 nav h2 {
   border-radius: 10px;
-  margin-left: 35%;
   margin-top: 10px;
-  width: 20%;
-  border: solid 2px white;
-  color: white;
   height: 80%;
+  width: 40%;
   font-size: 1.5rem;
   font-family: "Secular One", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: stretch;
+}
+
+.present-date {
+  width: 150px;
+  display: flex;
+  width: 30%;
+  flex-direction: row;
+  height: 100%;
+  justify-content: center;
   align-items: center;
 }
-#side-button {
-  border-radius: 5px;
-  border: solid 2px white;
-  background-color: transparent;
-  height: 100%;
-  width: 100%;
-}
-#side-button:active,
-#side-button:focus {
-  border-color: gray;
-}
 
-#side-button img {
-  height: 80%;
-  width: 80%;
-}
-
-.side {
-  background: transparent;
-  margin-left: 1%;
-  height: 50px;
-  width: 50px;
-}
-
-aside:target {
-  width: 16%;
+@media screen and (max-width: 900px) and (min-width: 300px) {
+  nav {
+    margin-top: 20px;
+    flex-direction: column;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+  }
+  nav h2 {
+    align-items: center;
+    margin: 0px;
+    width: 100%;
+  }
+  .present-date {
+    width: 100%;
+  }
 }

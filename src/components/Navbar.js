@@ -1,22 +1,50 @@
 import React from "react";
+import { connect } from "react-redux";
+
 import "../assets/css/Navbar.css";
-import menu from "../assets/images/menu_white.svg";
-function Navbar() {
+
+function Navbar(props) {
   let today = new Date().toLocaleDateString();
   return (
     <>
       <nav>
-        <div className="side">
-          <button id="side-button">
-            <img src={menu}></img>
-          </button>
-        </div>
         <h2>Habit App</h2>
-
-        <div>{today}</div>
+        <div className="present-date">Date : {today}</div>
+        <div
+          style={{
+            color: "grey",
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          You are tracking
+          <span
+            style={{
+              margin: "10px",
+              color: "grey",
+              height: "30px",
+              width: "30px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "yellow",
+              borderRadius: "50%",
+            }}
+          >
+            {props.list.length}
+          </span>{" "}
+          Habits
+        </div>
       </nav>
     </>
   );
 }
 
-export default Navbar;
+const mapStateToProps = (state) => {
+  const { list } = state;
+  return { list };
+};
+export default connect(mapStateToProps)(Navbar);

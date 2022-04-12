@@ -13,18 +13,12 @@ function Home(props) {
       id: Date.now(),
       status: [0, 0, 0, 0, 0, 0, 0],
     };
-    console.log(props);
+
     props.addHabit(data);
   }
 
   function deleteHabit(value) {
     props.removeHabit(value);
-  }
-
-  function handleChange(event) {
-    setValue(() => {
-      value = event.target.value;
-    });
   }
 
   function handleSubmit() {
@@ -36,12 +30,12 @@ function Home(props) {
     });
 
     if (value === undefined || value === "") {
-      alert("please add something");
+      alert("Please add some habit");
     } else if (!found && value != undefined) {
       addHabits(value);
       setValue("");
     } else {
-      alert("already added ");
+      alert("Already added ");
     }
   }
 
@@ -55,13 +49,11 @@ function Home(props) {
         <input
           value={value}
           type="text"
-          style={{ height: "20px", width: "100px" }}
-          onChange={(event) => {
-            handleChange(event);
+          onChange={(e) => {
+            setValue(e.target.value); //controlled by state
           }}
         ></input>
         <button
-          style={{ height: "20px", width: "100px" }}
           onClick={() => {
             handleSubmit();
           }}
@@ -73,10 +65,10 @@ function Home(props) {
         {props.list.map((elem) => {
           return (
             <>
-              <li key={`${elem["id"]}`}>
-                <h1>{elem.title}</h1>
-
+              <li key={elem}>
+                <h1 key={elem.title}>{elem.title}</h1>
                 <button
+                  key={elem.id}
                   onClick={() => {
                     handleDeleteHabit(elem.id);
                   }}
