@@ -85,4 +85,7 @@ a {
   #logo {
     margin-bottom: 15px;
   }
+  .tasks-container {
+    overflow-y: scroll;
+  }
 }

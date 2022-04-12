@@ -62,7 +62,7 @@
   width: 30%;
 }
 
-li:nth-child(7) {
+.col-container li:nth-child(7) {
   background-color: rgba(255, 255, 0, 0.477);
 }
 
@@ -81,13 +81,15 @@ li:nth-child(7) {
     font-size: 15px;
   }
   .habit-container {
-    overflow-x: scroll;
     height: 200px;
     margin-top: 20px;
     width: 1200px;
     background: white;
     border: none;
     box-shadow: 2px 4px 7px 0px #80808036;
+  }
+  .col-container {
+    overflow-x: scroll;
   }
   .habit-container::-webkit-scrollbar {
     visibility: hidden;
