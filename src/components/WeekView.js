@@ -50,58 +50,59 @@ function WeekView(props) {
           j++;
           return (
             <div className="habit-container">
-              {/*display days of the week */}
-
-              <div className="week">
-                <h2 className="title" style={{ marginTop: "10px" }}>
-                  Habits/Day
-                </h2>
-                <ul className="col-container">
-                  {week.map((elem) => {
-                    if (i == 7) {
-                      i = 0;
-                    }
-                    i++;
-                    return <li key={i}>{week[i - 1]}</li>;
-                  })}
-                </ul>
+              <div className="title">
+                <h2 style={{ marginTop: "10px" }}>Habits/Day</h2>
+                <h1>{elem1.title}</h1>
               </div>
 
-              {/*display days of the week */}
-              <div className="date">
-                <div className="title"></div>
-                <ul className="col-container">
-                  {res_arr.map((elem) => {
-                    return <li key={`date-${elem}`}>{elem}</li>;
-                  })}
-                </ul>
-              </div>
-              <div className="status">
-                <h1 className="title">{elem1.title}</h1>
-                <ul className="col-container">
-                  {elem1.status.map((a, k = 0) => {
-                    k++;
-                    return (
-                      <li key={k} className="toggle-img">
-                        <>
-                          {a === 0 ? (
-                            <img src={pending} />
-                          ) : a === 1 ? (
-                            <img src={right} />
-                          ) : (
-                            <img src={wrong} />
-                          )}
-                          <button
-                            className="toggle-btn"
-                            onClick={() => {
-                              toggleStatus(j - 1, k - 1, a);
-                            }}
-                          ></button>
-                        </>
-                      </li>
-                    );
-                  })}
-                </ul>
+              <div className="data-container">
+                <div className="week">
+                  <ul className="col-container">
+                    {week.map((elem) => {
+                      if (i == 7) {
+                        i = 0;
+                      }
+                      i++;
+                      return <li key={i}>{week[i - 1]}</li>;
+                    })}
+                  </ul>
+                </div>
+
+                {/*display days of the week */}
+                <div className="date">
+                  <ul className="col-container">
+                    {res_arr.map((elem) => {
+                      return <li key={`date-${elem}`}>{elem}</li>;
+                    })}
+                  </ul>
+                </div>
+
+                <div className="status">
+                  <ul className="col-container">
+                    {elem1.status.map((a, k = 0) => {
+                      k++;
+                      return (
+                        <li key={k} className="toggle-img">
+                          <>
+                            {a === 0 ? (
+                              <img src={pending} />
+                            ) : a === 1 ? (
+                              <img src={right} />
+                            ) : (
+                              <img src={wrong} />
+                            )}
+                            <button
+                              className="toggle-btn"
+                              onClick={() => {
+                                toggleStatus(j - 1, k - 1, a);
+                              }}
+                            ></button>
+                          </>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
             </div>
           );

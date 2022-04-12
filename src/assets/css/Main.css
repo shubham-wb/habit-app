@@ -85,7 +85,7 @@ a {
   #logo {
     margin-bottom: 15px;
   }
-  .tasks-container {
+  .habits-list {
     overflow-y: scroll;
   }
 }
