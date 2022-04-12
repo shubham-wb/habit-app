@@ -108,7 +108,12 @@
   .title {
     border-right: solid 0.5px black;
     width: 30%;
-    font-size: 15px;
+  }
+  .title h1 {
+    font-size: 9px;
+  }
+  .title h2 {
+    font-size: 9px;
   }
   .habit-container {
     height: 200px;

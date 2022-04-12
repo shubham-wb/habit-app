@@ -85,7 +85,4 @@ a {
   #logo {
     margin-bottom: 15px;
   }
-  .habits-list {
-    overflow-y: scroll;
-  }
 }
