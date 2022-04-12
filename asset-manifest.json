@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/habit-app/static/css/main.973a8dd3.css",
+    "main.css": "/habit-app/static/css/main.6ba8fb2a.css",
     "main.js": "/habit-app/static/js/main.dee0fafa.js",
     "static/media/pending.png": "/habit-app/static/media/pending.dc0b5de51b73b7204460.png",
     "index.html": "/habit-app/index.html",
@@ -8,11 +8,11 @@
     "static/media/account.svg": "/habit-app/static/media/account.2aa940025643e7edf8c31bfcab60e055.svg",
     "static/media/event.svg": "/habit-app/static/media/event.9b5af0877a9900f07799ca8e8ec7417a.svg",
     "static/media/dashboard.svg": "/habit-app/static/media/dashboard.6a1e503a2da955a483e719fb9d17fb3f.svg",
-    "main.973a8dd3.css.map": "/habit-app/static/css/main.973a8dd3.css.map",
+    "main.6ba8fb2a.css.map": "/habit-app/static/css/main.6ba8fb2a.css.map",
     "main.dee0fafa.js.map": "/habit-app/static/js/main.dee0fafa.js.map"
   },
   "entrypoints": [
-    "static/css/main.973a8dd3.css",
+    "static/css/main.6ba8fb2a.css",
     "static/js/main.dee0fafa.js"
   ]
 }
