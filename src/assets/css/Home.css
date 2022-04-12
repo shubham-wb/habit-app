@@ -112,7 +112,6 @@ small,
     margin-left: 10%;
     flex-direction: column;
     justify-content: center;
-    overflow-y: scroll;
   }
   .habits-list li {
     width: 100%;
