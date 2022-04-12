@@ -1,0 +1,68 @@
+.habit-container {
+  background-color: #fbb204eb;
+  border: solid 2px black;
+  height: 200px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.week {
+  /* border-bottom: solid 2px black; */
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.date {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.status {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.col-container {
+  list-style-type: none;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.col-container li {
+  position: relative;
+  border: solid 2px black;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-container li img {
+  height: 30%;
+  width: 30%;
+}
+
+.toggle-btn {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+}

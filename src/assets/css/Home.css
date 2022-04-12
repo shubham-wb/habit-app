@@ -1,0 +1,36 @@
+.add-btn {
+  height: 10%;
+  background: yellow;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.habits-list {
+  padding: 0px;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  align-items: center;
+}
+.habits-list li {
+  width: 80%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+
+  background: pink;
+}
+
+.habits-list li h1 {
+  height: 100%;
+  width: 70%;
+}
+
+.habits-list li button {
+  height: 100%;
+  width: 20%;
+}

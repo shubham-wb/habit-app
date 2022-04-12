@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./assets/css/Main.css";
+import React from "react";
+import Navbar from "./components/Navbar";
+import Aside from "./components/Aside";
+import Home from "./components/Home";
 
-function App() {
+import "./assets/css/Main.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./assets/css/App.css";
+import WeekView from "./components/WeekView";
+
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <div className="main">
+          <Aside />
+          <section className="tasks-container">
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/week-view" element={<WeekView />}></Route>
+            </Routes>
+          </section>
+        </div>
+      </BrowserRouter>
+    </>
   );
 }
 
