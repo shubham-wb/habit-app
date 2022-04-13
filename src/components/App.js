@@ -15,15 +15,20 @@ function App(props) {
     <>
       <BrowserRouter>
         <Aside />
-
         <div className="main">
           <Navbar />
           <section className="tasks-container">
             <Routes>
-              <Route path="/" element={<Home />}></Route>
-              <Route path="/week-view" element={<WeekView />}></Route>
-              <Route path="/profile" element={<Profile />}></Route>
-              <Route path="/notifications" element={<Notifications />}></Route>
+              <Route path="/" element={<Home />}></Route> {/*Index Page */}
+              <Route path="/week-view" element={<WeekView />}></Route>{" "}
+              {/*Route to week view  */}
+              <Route path="/profile" element={<Profile />}></Route>{" "}
+              {/*Route to profile section of user  */}
+              <Route
+                path="/notifications"
+                element={<Notifications />}
+              ></Route>{" "}
+              {/*Route to show any pending notifications */}
             </Routes>
           </section>
         </div>

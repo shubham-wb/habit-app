@@ -5,8 +5,9 @@ import { addHabit, removeHabit } from "../actions";
 import "../assets/css/Home.css";
 
 function Home(props) {
-  let [value, setValue] = useState("");
+  let [value, setValue] = useState(""); //state to take input as controlled action
 
+  //function to dispatch addHabit action
   function addHabits(value) {
     let data = {
       title: value,
@@ -16,11 +17,11 @@ function Home(props) {
 
     props.addHabit(data);
   }
-
+  //function to dispatch removehabit action
   function deleteHabit(value) {
     props.removeHabit(value);
   }
-
+  //function to handle submit habit btn
   function handleSubmit() {
     let found = false;
     props.list.map((elem) => {
@@ -28,7 +29,7 @@ function Home(props) {
         found = true;
       }
     });
-
+    //adding check to prevent user from adding blank habit
     if (value === undefined || value === "") {
       alert("Please add some habit");
     } else if (!found && value != undefined) {
@@ -88,4 +89,7 @@ const mapStateToProps = (state) => {
   const { list } = state;
   return { list };
 };
+
+// passing global state stored in store to component as prop
+//dispatching to action from component itself
 export default connect(mapStateToProps, { addHabit, removeHabit })(Home);

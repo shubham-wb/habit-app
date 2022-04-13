@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
+import { connect } from "react-redux"; // connect  React component to  Redux store
 import "../assets/css/WeekView.css";
 import pending from "../assets/images/pending.png";
 import right from "../assets/images/right.png";
@@ -7,7 +7,13 @@ import wrong from "../assets/images/wrong.png";
 import { toggleHabitStatus } from "../actions";
 
 function WeekView(props) {
-  let [update, setUpdate] = useState(0);
+  let [update, setUpdate] = useState(0); //to rerender the component on status change
+
+  //function to toggle the status of a particular habit taking three inputs
+
+  // 1. index of habit of which status is to be changed
+  // 2. day of the status to be changed i.e. id of status property
+  // 3. value of status 0-->Pending , 1--> Done 2--> Not Done
 
   function toggleStatus(habitIndex, index, a) {
     let stat;
@@ -20,6 +26,7 @@ function WeekView(props) {
     setUpdate((update = update + 1));
   }
 
+  //array to display previous dates from present
   const d = new Date();
   let day = d.getDay();
   let i = day + 1;
@@ -32,7 +39,7 @@ function WeekView(props) {
     res++;
     m++;
   }
-
+  //array to display weeks
   let week = [
     "Sunday",
     "Monday",
@@ -54,7 +61,7 @@ function WeekView(props) {
                 <h2 style={{ marginTop: "10px" }}>Habits/Day</h2>
                 <h1>{elem1.title}</h1>
               </div>
-
+              {/* display  week column   */}
               <div className="data-container">
                 <div className="week">
                   <ul className="col-container">
@@ -68,7 +75,7 @@ function WeekView(props) {
                   </ul>
                 </div>
 
-                {/*display days of the week */}
+                {/*display dates of the week */}
                 <div className="date">
                   <ul className="col-container">
                     {res_arr.map((elem) => {
@@ -79,28 +86,46 @@ function WeekView(props) {
 
                 <div className="status">
                   <ul className="col-container">
-                    {elem1.status.map((a, k = 0) => {
-                      k++;
-                      return (
-                        <li key={k} className="toggle-img">
-                          <>
-                            {a === 0 ? (
-                              <img src={pending} />
-                            ) : a === 1 ? (
-                              <img src={right} />
-                            ) : (
-                              <img src={wrong} />
-                            )}
-                            <button
-                              className="toggle-btn"
-                              onClick={() => {
-                                toggleStatus(j - 1, k - 1, a);
-                              }}
-                            ></button>
-                          </>
-                        </li>
-                      );
-                    })}
+                    {
+                      //function to display toggled state
+                      elem1.status.map((a, k = 0) => {
+                        k++;
+                        return (
+                          <li key={k} className="toggle-img">
+                            <>
+                              {a === 0 ? (
+                                <img
+                                  src={pending}
+                                  data-toggle="tooltip"
+                                  data-placement="bottom"
+                                  title="Pending"
+                                />
+                              ) : a === 1 ? (
+                                <img
+                                  src={right}
+                                  data-toggle="tooltip"
+                                  data-placement="bottom"
+                                  title="Done"
+                                />
+                              ) : (
+                                <img
+                                  src={wrong}
+                                  data-toggle="tooltip"
+                                  data-placement="bottom"
+                                  title="Not Done"
+                                />
+                              )}
+                              <button
+                                className="toggle-btn"
+                                onClick={() => {
+                                  toggleStatus(j - 1, k - 1, a);
+                                }}
+                              ></button>
+                            </>
+                          </li>
+                        );
+                      })
+                    }
                   </ul>
                 </div>
               </div>
@@ -108,6 +133,7 @@ function WeekView(props) {
           );
         })
       ) : (
+        // if there are no habits found display empty message
         <h1
           className="emptyMessage"
           style={{
@@ -125,10 +151,11 @@ function WeekView(props) {
     </>
   );
 }
-
+// connecting component to store
 const mapStateToProps = (state) => {
   const { list } = state;
   return { list };
 };
-
+// passing global state stored in store to component as prop
+//dispatching to action from component itself
 export default connect(mapStateToProps, { toggleHabitStatus })(WeekView);
