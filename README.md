@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Habit App Made with react Redux and Router
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+check live here --> https://shubham-wb.github.io/habit-app/
 
-## Available Scripts
+# FEATURES
 
-In the project directory, you can run:
+Add multiple habits to track like reading a book, going to the gym etc
 
-### `npm start`
+Track each habit everyday. These are the 3 statuses of a habit:
+1. **Done** - Mark the habit as done for a day
+2. **Not done** - Mark the habit as not done for a day
+3. **Pending Action** - User did not take any action on a habit for a day
+A view to show all current habits. Here give an add button where you can add a new habit to track
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**A view to display 7 days of each habit**
+Show today where user can mark todays habit and show the previous 6 days and the status of that habit for each day
+A user can toggle between the three (above mentioned) statuses of a habit i.e. I can change today’s status as done, not done or none anytime.
+User is  able to change any of the previous days status i.e. I can change the status of a habit for yesterday, day before yesterday or any previous 6 days as well
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+**Desktop View**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![1](https://user-images.githubusercontent.com/90547108/163084864-328fee60-daad-4212-b1f5-fc0ebf0b6e90.JPG)
 
-### `npm run build`
+![2](https://user-images.githubusercontent.com/90547108/163084868-b999793f-22c4-4189-b31d-70c3a55f094b.JPG)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![3](https://user-images.githubusercontent.com/90547108/163084856-29445f80-b32c-4e76-bd8a-a9978429d61f.JPG)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+**Mobile View **
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![IMG-20220412-WA0011](https://user-images.githubusercontent.com/90547108/163084918-5305c89d-bee0-455b-a922-1b60f85827da.jpg)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![IMG-20220412-WA0010](https://user-images.githubusercontent.com/90547108/163084929-03f93bbd-09f1-4e5a-bbdc-bab473948722.jpg)
