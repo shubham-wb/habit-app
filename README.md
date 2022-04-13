@@ -28,8 +28,3 @@ User is  able to change any of the previous days status i.e. I can change the st
 
 
 
-**Mobile View **
-
-![IMG-20220412-WA0011](https://user-images.githubusercontent.com/90547108/163084918-5305c89d-bee0-455b-a922-1b60f85827da.jpg)
-
-![IMG-20220412-WA0010](https://user-images.githubusercontent.com/90547108/163084929-03f93bbd-09f1-4e5a-bbdc-bab473948722.jpg)
